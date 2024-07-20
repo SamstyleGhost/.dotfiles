@@ -219,6 +219,13 @@ bindsym XF86MonBrightnessDown exec brightnessctl -d "amdgpu_bl1" set 10%-
 # Touchpad controls
 # bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
+# Screenshot
+bindsym Print exec "maim -u -s -n -l -c 0.157,0.333,0.466,0.4 ~/Pictures/Screenshot-$(date -Iseconds | cut -d'+' -f1).png"
+bindsym Mod4+Print exec "maim -u -s -n -l -c 0.157,0.333,0.466,0.4 | xclip -selection clipboard -t image/png"
+# bindsym Shift+Print exec ~/.files/i3/record-screen.sh byzanz
+# bindsym Shift+Ctrl+Print exec ~/.files/i3/record-screen.sh gif
+# bindsym Shift+Mod4+Print exec ~/.files/i3/record-screen.sh ogv
+
 # Assign workspaces to applications
 assign [class="Spotify"] $ws10
 default_border pixel 0
