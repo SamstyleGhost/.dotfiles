@@ -1,6 +1,51 @@
+# NOTE: Nvim
 tags
 test.sh
 .luarc.json
 
 spell/
 lazy-lock.json
+
+# NOTE: Wezterm
+
+# Compiled Lua sources
+wezterm/.config/wezterm/luac.out
+
+# luarocks build files
+*.src.rock
+*.zip
+*.tar.gz
+
+# Object files
+*.o
+*.os
+*.ko
+*.obj
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+*.def
+*.exp
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
