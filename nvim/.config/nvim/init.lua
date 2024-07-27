@@ -17,6 +17,12 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   { 'numToStr/Comment.nvim', opts = {} }, -- Use gc to comment lines
+  {
+    'norcalli/nvim-colorizer.lua',
+    config = function()
+      require('colorizer').setup()
+    end,
+  },
 
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -366,25 +372,25 @@ require('lazy').setup({
     end,
   },
 
-  -- {
-  --   'Shatur/neovim-ayu',
-  --   priority = 1000,
-  --   init = function()
-  --     vim.cmd.colorscheme 'ayu-dark'
-  --     vim.api.nvim_set_hl(0, 'LineNrAbove', { fg='#666666' })
-  --     vim.api.nvim_set_hl(0, 'CursorLineNr', { fg='#ffffff' })
-  --     vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='#666666' })
-  --   end
-  -- },
   {
-    'AlexvZyl/nordic.nvim',
-    lazy = false,
+    'Shatur/neovim-ayu',
     priority = 1000,
-    config = function()
-      require('nordic').load()
-      vim.cmd.colorscheme 'nordic'
+    init = function()
+      vim.cmd.colorscheme 'ayu-dark'
+      vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = '#666666' })
+      vim.api.nvim_set_hl(0, 'CursorLineNr', { fg = '#ffffff' })
+      vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = '#666666' })
     end,
   },
+  -- {
+  --   'AlexvZyl/nordic.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require('nordic').load()
+  --     vim.cmd.colorscheme 'nordic'
+  --   end,
+  -- },
   {
     'rktjmp/lush.nvim',
   },

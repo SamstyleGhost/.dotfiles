@@ -39,6 +39,9 @@ exec --no-startup-id nm-applet
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
+exec_always --no-startup-id killall dunst
+exec_always --no-startup-id dunst
+
 bindsym $mod+Shift+x exec lock
 
 # Use pactl to adjust volume in PulseAudio.
@@ -132,7 +135,7 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1: "
-set $ws2 "2"
+set $ws2 "2: "
 set $ws3 "3"
 set $ws4 "4: "
 set $ws5 "5"
@@ -228,6 +231,8 @@ bindsym Mod4+Print exec "maim -u -s -n -l -c 0.157,0.333,0.466,0.4 | xclip -sele
 # bindsym Shift+Mod4+Print exec ~/.files/i3/record-screen.sh ogv
 
 # Assign workspaces to applications
+assign [class="Brave-browser"] $ws3
+assign [class="Google-chrome"] $ws4
 assign [class="Spotify"] $ws10
 default_border pixel 0
 
