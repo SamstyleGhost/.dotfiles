@@ -230,6 +230,13 @@ bindsym Mod4+Print exec "maim -u -s -n -l -c 0.157,0.333,0.466,0.4 | xclip -sele
 # bindsym Shift+Ctrl+Print exec ~/.files/i3/record-screen.sh gif
 # bindsym Shift+Mod4+Print exec ~/.files/i3/record-screen.sh ogv
 
+# Bind hotkeys to applications
+bindsym $sup+b exec brave-browser
+bindsym $sup+g exec google-chrome
+bindsym $sup+m exec spotify
+bindsym $sup+e exec thunar
+bindsym $sup+c exec code
+
 # Assign workspaces to applications
 assign [class="Brave-browser"] $ws3
 assign [class="Google-chrome"] $ws4
