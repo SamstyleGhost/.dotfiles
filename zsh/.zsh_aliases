@@ -1,11 +1,19 @@
-nv() { 
-  nvim $1
-}
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
 
 alias neo4jdesktop="~/Applications/neo4j-desktop.AppImage --no-sandbox"
 alias obsidian="~/Applications/Obsidian-1.6.5.AppImage --no-sandbox"
 alias remix="~/Applications/Remix-Desktop-Insiders-1.0.7-insiders.AppImage --no-sandbox"
 alias lock="i3lock -i /home/rohan/Pictures/lighthouse.png"
+
+nv() { 
+  nvim $1
+}
 
 # Fuzzy finder
 fdf() {

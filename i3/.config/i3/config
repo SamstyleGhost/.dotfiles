@@ -214,7 +214,7 @@ bindsym $mod+r mode "resize"
 # }
 
 # Wallpaper
-exec_always feh --bg-scale /home/rohan/Pictures/island_wallpaper.jpg
+exec_always feh --bg-scale /home/rohan/Pictures/wezterm_bg.jpg
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec brightnessctl -d "amdgpu_bl1" set +10%
@@ -224,7 +224,7 @@ bindsym XF86MonBrightnessDown exec brightnessctl -d "amdgpu_bl1" set 10%-
 # bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
 # Screenshot
-bindsym Print exec "maim -u -s -n -l -c 0.157,0.333,0.466,0.4 ~/Pictures/Screenshot-$(date -Iseconds | cut -d'+' -f1).png"
+bindsym Print exec "maim -u -s -n -l -c 0.157,0.333,0.466,0.4 ~/Pictures/Screenshots/Screenshot-$(date -Iseconds | cut -d'+' -f1).png"
 bindsym Mod4+Print exec "maim -u -s -n -l -c 0.157,0.333,0.466,0.4 | xclip -selection clipboard -t image/png"
 # bindsym Shift+Print exec ~/.files/i3/record-screen.sh byzanz
 # bindsym Shift+Ctrl+Print exec ~/.files/i3/record-screen.sh gif
