@@ -138,3 +138,5 @@ export NVM_DIR="$HOME/.nvm"
 
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 eval "$(atuin init bash)"
+
+PATH=~/.console-ninja/.bin:$PATH
