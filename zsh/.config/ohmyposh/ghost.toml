@@ -18,7 +18,7 @@ console_title_template = '{{ .Folder }}'
   [[blocks.segments]]
     type = 'text'
     style = 'plain'
-    template = '{{ if .Env.TMUX }}tmux{{ end }}'
+    template = '{{ if .Env.TMUX }}tmux {{ end }}'
     foreground = 'p:grey'
 
   [[blocks.segments]]

@@ -1,0 +1,18 @@
+;; Kanata config
+
+(defsrc
+	caps
+	esc
+	ralt
+)
+
+(defalias
+	escctrl (tap-hold-press 250 150 esc lctrl)
+	ctrlcaps (tap-dance 250 (esc caps))
+)
+
+(deflayer base
+	@escctrl
+	@ctrlcaps
+	lmeta
+)
