@@ -1,5 +1,3 @@
-zmodload zsh/zprof
-
 source "$HOME/.zsh_aliases"
 
 if [[ -f ~/.dir_colors ]]; then
@@ -29,16 +27,23 @@ fi
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
-# Add in zsh plugins
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
+zinit light-mode for \
+    zsh-users/zsh-syntax-highlighting \
+    zsh-users/zsh-autosuggestions \
+    zsh-users/zsh-completions \
+    Aloxaf/fzf-tab
 
 # Add in snippets
-zinit snippet OMZP::git
-zinit snippet OMZP::sudo
-zinit snippet OMZP::command-not-found
+autoload -Uz zinit snippet OMZP::git
+autoload -Uz zinit snippet OMZP::sudo
+autoload -Uz zinit snippet OMZP::command-not-found
+
+zcompdump="${ZDOTDIR:-$HOME}/.zcompdump"
+if [[ -f "$zcompdump" && "$zcompdump" -ot "${ZDOTDIR:-$HOME}/.zshrc" ]]; then
+  compinit -d "$zcompdump"
+else
+  compinit
+fi
 
 # Load completions
 autoload -Uz compinit && compinit
@@ -74,13 +79,19 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
 alias ls='ls --color'
+alias wifi='nmcli device wifi'
 
-PATH=$HOME/zig-linux-x86_64-0.12.0:$PATH
-PATH=$PATH:$HOME/rohan/.cargo/bin
-PATH=$PATH:$HOME/rohan/.cargo/bin/kanata
-PATH=$PATH:/bin:/usr/bin
-PATH=$PATH:/usr/local/go/bin
-PATH=$PATH:/usr/local/bin
+paths=(
+  "$HOME/zig-linux-x86_64-0.12.0"
+  "$HOME/rohan/.cargo/bin"
+  "$HOME/rohan/.cargo/bin/kanata"
+  "/bin" "/usr/bin"
+  "/usr/local/go/bin"
+  "/usr/local/bin"
+  "~/.console-ninja/.bin"
+)
+PATH=$(printf "%s:" "${paths[@]}")$PATH
+
 
 lazynvm() {
   # Unset existing functions
@@ -107,5 +118,3 @@ npx() { lazynvm npx $@ }
 eval "$(atuin init zsh)"
 
 PATH=~/.console-ninja/.bin:$PATH
-
-zprof

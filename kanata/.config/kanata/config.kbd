@@ -7,7 +7,7 @@
 )
 
 (defalias
-	escctrl (tap-hold-press 250 150 esc lctrl)
+	escctrl (tap-hold-press 150 150 esc lctrl)
 	ctrlcaps (tap-dance 250 (esc caps))
 )
 
