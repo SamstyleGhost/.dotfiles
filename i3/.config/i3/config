@@ -214,7 +214,7 @@ bindsym $mod+r mode "resize"
 # }
 
 # Wallpaper
-exec_always feh --bg-scale /home/rohan/Pictures/wezterm_bg.jpg
+# exec_always feh --randomize --bg-scale /home/rohan/Pictures/wallpapers/*
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec brightnessctl -d "amdgpu_bl1" set +10%
@@ -236,6 +236,7 @@ bindsym $sup+g exec google-chrome
 bindsym $sup+m exec spotify
 bindsym $sup+e exec thunar
 bindsym $sup+c exec code
+bindsym $sup+z exec /home/rohan/Applications/zen-specific.AppImage --no-sandbox
 
 # Assign workspaces to applications
 assign [class="Brave-browser"] $ws3

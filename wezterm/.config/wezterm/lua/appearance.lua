@@ -5,7 +5,7 @@ local M = {}
 M.apply_to_config = function(c)
 	c.color_scheme = "Azu (Gogh)"
 	local scheme = wez.color.get_builtin_schemes()["Azu (Gogh)"]
-	c.window_background_image = "/home/rohan/Pictures/wezterm_bg.jpg"
+	c.window_background_image = "/home/rohan/Pictures/wallpapers/hills.jpeg"
 	c.colors = {
 		split = scheme.ansi[2],
 	}

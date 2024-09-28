@@ -32,3 +32,8 @@ dot() {
     cd "$dir" || return
   fi
 }
+
+# cds into the new directory
+mkdirc() {
+  mkdir $1 && cd $1
+}

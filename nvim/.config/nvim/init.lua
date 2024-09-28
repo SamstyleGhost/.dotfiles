@@ -23,7 +23,6 @@ require('lazy').setup({
       require('colorizer').setup()
     end,
   },
-
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
@@ -559,11 +558,11 @@ require('lazy').setup({
   },
 })
 
-vim.cmd.hi 'Comment gui=none'
-vim.cmd.hi 'Normal guibg=none'
-vim.cmd.hi 'NonText guibg=none'
-vim.cmd.hi 'Normal ctermbg=none'
-vim.cmd.hi 'NonText ctermbg=none'
+-- vim.cmd.hi 'Comment gui=none'
+-- vim.cmd.hi 'Normal guibg=none'
+-- vim.cmd.hi 'NonText guibg=none'
+-- vim.cmd.hi 'Normal ctermbg=none'
+-- vim.cmd.hi 'NonText ctermbg=none'
 -- vim.cmd('colorscheme oceanicghost')
 
 -- The line beneath this is called `modeline`. See `:help modeline`

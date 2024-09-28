@@ -87,8 +87,10 @@ paths=(
   "$HOME/rohan/.cargo/bin/kanata"
   "/bin" "/usr/bin"
   "/usr/local/go/bin"
+  "$HOME/go/bin"
   "/usr/local/bin"
   "~/.console-ninja/.bin"
+  "/snap/bin"
 )
 PATH=$(printf "%s:" "${paths[@]}")$PATH
 
