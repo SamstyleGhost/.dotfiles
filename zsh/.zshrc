@@ -94,29 +94,11 @@ paths=(
 )
 PATH=$(printf "%s:" "${paths[@]}")$PATH
 
-
-lazynvm() {
-  # Unset existing functions
-  unset -f nvm node npm npx
-
-  # Load nvm if necessary
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
-  # Load nvm bash completion if necessary
-  [ -f "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
-}
-
-# Define lazy-loaded functions for nvm, node, npm, and npx
-nvm() { lazynvm nvm $@ }
-node() { lazynvm node $@ }
-npm() { lazynvm npm $@ }
-npx() { lazynvm npx $@ }
-
+[ -f "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
 
 . "$HOME/.atuin/bin/env"
 
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 eval "$(atuin init zsh)"
-
-PATH=~/.console-ninja/.bin:$PATH

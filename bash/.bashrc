@@ -126,9 +126,11 @@ if ! shopt -oq posix; then
 fi
 export PATH="$HOME/zig-linux-x86_64-0.12.0:$PATH"
 export PATH="$HOME/rohan/.cargo/bin"
+export PATH="$HOME/rohan/.cargo/bin/kanata"
 export PATH=$PATH:/bin:/usr/bin
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/snap/bin
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

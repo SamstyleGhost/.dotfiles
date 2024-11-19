@@ -239,7 +239,6 @@ require('lazy').setup({
         gopls = {},
         jsonls = {},
         sqlls = {},
-        tsserver = {},
         lua_ls = {
           settings = {
             Lua = {
@@ -464,6 +463,7 @@ require('lazy').setup({
   {
     'ThePrimeagen/harpoon',
     branch = 'harpoon2',
+    dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
       local harpoon = require 'harpoon'
       ---@diagnostic disable-next-line: missing-parameter
@@ -477,16 +477,16 @@ require('lazy').setup({
       map('<leader>hm', function()
         harpoon.ui:toggle_quick_menu(harpoon:list())
       end)
-      map('<leader><C-s-h>', function()
+      map('<leader><C-S-h>', function()
         harpoon:list():select(1)
       end)
-      map('<leader><C-s-j>', function()
+      map('<leader><C-S-j>', function()
         harpoon:list():select(2)
       end)
-      map('<leader><C-s-k>', function()
+      map('<leader><C-S-k>', function()
         harpoon:list():select(3)
       end)
-      map('<leader><C-s-l>', function()
+      map('<leader><C-S-l>', function()
         harpoon:list():select(4)
       end)
     end,

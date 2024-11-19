@@ -1,15 +1,11 @@
 #!/bin/bash
 
-while true
-	do
-		power=$(upower -i /org/freedesktop/Upower/devices/battery_BAT0 | grep percentage | grep -o "[0-9]*")
-		state=$(upower -i /org/freedesktop/Upower/devices/battery_BAT0 | grep state | cut -d ':' -f2 | xargs)
+power=$(cat /sys/class/power_supply/BAT0/capacity)
+state=$(cat /sys/class/power_supply/BAT0/status)
 
-		if [ "$power" -le 20 ] && [ "$state" = "discharging" ];
-		then
-			notify-send "Battery less than $power%. Insert charging" -u critical
-		fi
-
-		sleep 120
-	done
-
+if [ "$power" -le 20 ] && [ "$state" = "discharging" ];
+then
+	notify-send "Battery less than $power%. Insert charging" -u critical
+else 
+	notify-send "Current battery: $power%." -u critical
+fi

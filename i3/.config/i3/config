@@ -214,7 +214,8 @@ bindsym $mod+r mode "resize"
 # }
 
 # Wallpaper
-# exec_always feh --randomize --bg-scale /home/rohan/Pictures/wallpapers/*
+exec_always feh --randomize --bg-scale /home/rohan/Pictures/wallpapers/*
+# exec systemctl --user start wallpaperchanger.service
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec brightnessctl -d "amdgpu_bl1" set +10%

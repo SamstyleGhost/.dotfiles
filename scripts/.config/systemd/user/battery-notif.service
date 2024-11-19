@@ -1,11 +1,13 @@
 [Unit]
 Description=Notifications for low battery
+StartLimitIntervalSec=500
+StartLimitBurst=5
 
 [Service]
 Environment=DISPLAY=:0
 Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
 ExecStart=/home/rohan/.personal_scripts/battery-notif.sh
-Restart=always
+Restart=no
 User=rohan
 
 [Install]
